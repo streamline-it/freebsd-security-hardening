@@ -1,0 +1,4 @@
+---
+# tasks file for freebsd-security-hardening
+- name: call tasks to protect regular user accounts from forkbombs
+  ansible.builtin.include_tasks: fork-bomb-mitigation.yml

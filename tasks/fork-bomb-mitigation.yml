@@ -1,0 +1,14 @@
+---
+# tasks file for freebsd-security-hardening
+
+- name: ensure that users are capped in how many processes they can open
+  register: freebsd_security_hardening_config_task_stat
+  ansible.builtin.lineinfile:
+    path: "{{ freebsd_security_hardening_login_cfg_filepath }}"
+    regexp: "^\t:maxproc="
+    line: "\t:maxproc={{ freebsd_security_hardening_maxproc }}:\\"
+    state: present
+
+- name: ensure the login config db is rebuilt
+  when: freebsd_security_hardening_config_task_stat is changed
+  ansible.builtin.command: "cap_mkdb {{ freebsd_security_hardening_login_cfg_filepath }}"

@@ -1,0 +1,3 @@
+---
+# vars file for freebsd-security-hardening
+freebsd_security_hardening_login_cfg_filepath: /etc/login.conf

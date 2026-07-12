@@ -1,0 +1,3 @@
+---
+# defaults file for freebsd-security-hardening
+freebsd_security_hardening_maxproc: 300
