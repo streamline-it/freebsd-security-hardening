@@ -3,7 +3,7 @@ Role Name
 
 freebsd-security-hardening
 
-This roles will secure a FreeBSD host.  Currently is secures the following:
+This roles will secure a FreeBSD host.  Currently it secures the following:
 
 	fork bomb mitigation.  Changes the values to maxproc under /etc/login.conf
 
